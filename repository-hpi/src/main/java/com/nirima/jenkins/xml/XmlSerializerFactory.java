@@ -69,6 +69,8 @@ public class XmlSerializerFactory
         try
         {
             XMLInputFactory factory = XMLInputFactory.newInstance();
+            factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
+            factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
             factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, "true");
             XMLStreamReader parser = factory.createXMLStreamReader(is);
             return parser;
@@ -85,6 +87,8 @@ public class XmlSerializerFactory
         try
         {
             XMLInputFactory factory = XMLInputFactory.newInstance();
+            factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
+            factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
             factory.setProperty(XMLInputFactory.IS_NAMESPACE_AWARE, true);
             // factory.setProperty(XMLInputFactory., true);
             XMLStreamReader parser = factory.createXMLStreamReader(reader);
